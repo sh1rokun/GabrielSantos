@@ -16,9 +16,7 @@
             background-color: #343a40;
             color: #fff;
             padding: 20px 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            text-align: center; /* Center aligning the buttons */
         }
         .container {
             max-width: 800px;
@@ -44,7 +42,8 @@
         .profile h1 {
             margin-bottom: 10px;
             font-weight: bold;
-            color: #343a40;
+            color: #fff;
+            display: block; /* Making sure the name is displayed */
         }
         .profile p {
             margin-bottom: 20px;
@@ -117,6 +116,11 @@
 <body>
     <header>
         <div class="container">
+            <div class="tab-buttons">
+                <button id="profile-tab">Profile</button>
+                <button id="contact-tab">Contact</button>
+                <button id="hobbies-tab">Hobbies & Interest</button>
+            </div>
             <div class="profile">
                 <img src="gabgab.jpg" alt="Profile Picture" width="170" height="170">
                 <div class="profile-info">
@@ -134,14 +138,9 @@
                 </ul>
             </div>
         </div>
-        <div class="tab-buttons">
-            <button id="about-tab">About</button>
-            <button id="contact-tab">Contact</button>
-            <button id="hobbies-tab">Hobbies & Others</button>
-        </div>
     </header>
 
-    <section id="about" class="active"> <!-- Added class "active" to the About section to make it visible by default -->
+    <section id="profile" class="active"> <!-- Added class "active" to the Profile section to make it visible by default -->
         <div class="container">
             <h2>About Me</h2>
             <p>I'm 21 years old. I studied in Santa Rita College Pampanga as Bachelor of Science in Information System (BSIS) Student.</p>
