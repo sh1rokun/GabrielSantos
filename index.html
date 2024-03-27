@@ -16,6 +16,9 @@
             background-color: #343a40;
             color: #fff;
             padding: 20px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         .container {
             max-width: 800px;
@@ -24,6 +27,8 @@
         }
         .profile {
             text-align: center;
+            display: flex;
+            align-items: center;
         }
         .profile img {
             width: 200px;
@@ -32,6 +37,9 @@
             margin-bottom: 20px;
             border: 5px solid #fff;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .profile-info {
+            margin-left: 20px;
         }
         .profile h1 {
             margin-bottom: 10px;
@@ -42,7 +50,19 @@
             margin-bottom: 20px;
             font-size: 18px;
         }
-
+        .skills {
+            margin-left: 20px;
+        }
+        .skills h5 {
+            margin-top: 0;
+        }
+        .skills ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .skills li {
+            margin-bottom: 5px;
+        }
         /* Media queries for responsiveness */
         @media (max-width: 768px) {
             .container {
@@ -58,30 +78,73 @@
             .profile p {
                 font-size: 16px;
             }
+            .skills {
+                margin: 0;
+                text-align: left;
+            }
+        }
+        /* Hide all sections by default */
+        section {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        /* Show the active section */
+        section.active {
+            display: block;
+            animation: slideIn 0.5s ease-in-out;
+        }
+        /* Keyframes for animations */
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
         }
     </style>
 </head>
 <body>
     <header>
         <div class="container">
-            <h1>Gabriel L. Santos</h1> 
-            <img src="gabgab.jpg" alt="Profile Picture" width="170" height="170">
-            <nav>            
-                <h5>Skills</h5>
+            <div class="profile">
+                <img src="gabgab.jpg" alt="Profile Picture" width="170" height="170">
+                <div class="profile-info">
+                    <h1>Gabriel L. Santos</h1> 
+                    <p>BSIS Student</p>
+                </div>
+            </div>
+            <div class="skills">
+                <h5>SKILLS:</h5>
                 <ul>
                     <li>Programming</li> 
                     <li>Fast Typing</li>
                     <li>Problem Solver</li>
                     <li>Good Listener</li>
                 </ul>
-            </nav>
+            </div>
+        </div>
+        <div class="tab-buttons">
+            <button id="about-tab">About</button>
+            <button id="contact-tab">Contact</button>
+            <button id="hobbies-tab">Hobbies & Others</button>
         </div>
     </header>
 
-    <section id="about">
+    <section id="about" class="active"> <!-- Added class "active" to the About section to make it visible by default -->
         <div class="container">
             <h2>About Me</h2>
-            <p>I'am 21 years old. I studied in Santa Rita College Pampanga as Bachelor of Science in Information System (BSIS) Student.</p>
+            <p>I'm 21 years old. I studied in Santa Rita College Pampanga as Bachelor of Science in Information System (BSIS) Student.</p>
         </div>
     </section>
 
@@ -89,9 +152,37 @@
         <div class="container">
             <h2>Contact Me</h2> 
             <p>09707700452 - @itzsh1ro4@gmail.com</p>
-
         </div>
     </section>
 
+    <section id="hobbies">
+        <div class="container">
+            <h2>Hobbies & Interest</h2>
+                <li>Animation</li>
+                <li>Video Editing</li>
+                <li>Video Games</li>
+                <li>Cycling</li>
+        </div>
+    </section>
+
+    <script>
+        // JavaScript for handling tab transitions
+        document.addEventListener("DOMContentLoaded", function() {
+            const tabs = document.querySelectorAll(".tab-buttons button");
+
+            tabs.forEach(tab => {
+                tab.addEventListener("click", function(event) {
+                    const target = this.id.replace("-tab", "");
+                    const sections = document.querySelectorAll("section");
+
+                    sections.forEach(section => {
+                        section.classList.remove("active");
+                });
+
+            document.getElementById(target).classList.add("active");
+        });
+        });
+        });
+    </script>
 </body>
 </html>
