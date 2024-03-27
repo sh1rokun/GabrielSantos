@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -42,19 +42,37 @@
             margin-bottom: 20px;
             font-size: 18px;
         }
+
+        /* Media queries for responsiveness */
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            .profile img {
+                width: 150px;
+                height: 150px;
+            }
+            .profile h1 {
+                font-size: 24px;
+            }
+            .profile p {
+                font-size: 16px;
+            }
+        }
     </style>
 </head>
 <body>
     <header>
-        <header>
         <div class="container">
-            <img src="your_profile_picture_url.jpg" alt="Profile Picture">
-            <h1>Your Name</h1>
-            <nav>
+            <h1>Gabriel L. Santos</h1> 
+            <img src="gabgab.jpg" alt="Profile Picture" width="170" height="170">
+            <nav>            
+                <h5>Skills</h5>
                 <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li>Programming</li> 
+                    <li>Fast Typing</li>
+                    <li>Problem Solver</li>
+                    <li>Good Listener</li>
                 </ul>
             </nav>
         </div>
@@ -63,23 +81,17 @@
     <section id="about">
         <div class="container">
             <h2>About Me</h2>
-            <p>Write something about yourself here.</p>
+            <p>I'am 21 years old. I studied in Santa Rita College Pampanga as Bachelor of Science in Information System (BSIS) Student.</p>
         </div>
     </section>
 
     <section id="contact">
         <div class="container">
-            <h2>Contact Me</h2>
-            <!-- Add your contact form or contact information here -->
+            <h2>Contact Me</h2> 
+            <p>09707700452 - @itzsh1ro4@gmail.com</p>
+
         </div>
     </section>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Your Name - Personal Website</p>
-        </div>
-    </footer>
-</body>
-</html>
 </body>
 </html>
